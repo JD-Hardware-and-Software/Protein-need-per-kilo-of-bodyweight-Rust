@@ -1,0 +1,13 @@
+use std::io;
+
+fn main() {
+    println!("Enter your weight in kilograms:");
+    
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    
+    let weight: f32 = input.trim().parse().unwrap();
+    let protein_needed: f32 = weight * 1.2; // Assuming 1.2 grams of protein per kg of body weight
+    
+    println!("You need {} grams of protein per day.", protein_needed);
+}
